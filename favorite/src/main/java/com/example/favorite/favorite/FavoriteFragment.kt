@@ -1,4 +1,4 @@
-package com.example.rickexpert.favorite
+package com.example.favorite.favorite
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.core.core.ui.TourismAdapter
 import com.example.rickexpert.databinding.FragmentFavoriteBinding
 import com.example.rickexpert.detail.DetailTourismActivity
+import com.example.rickexpert.favorite.FavoriteViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

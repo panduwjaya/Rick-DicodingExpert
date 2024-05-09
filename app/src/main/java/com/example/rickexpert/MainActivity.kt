@@ -1,5 +1,7 @@
 package com.example.rickexpert
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
@@ -7,9 +9,8 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
-import com.example.rickexpert.favorite.FavoriteFragment
-import com.example.rickexpert.home.HomeFragment
 import com.example.rickexpert.databinding.ActivityMainBinding
+import com.example.rickexpert.home.HomeFragment
 import com.google.android.material.navigation.NavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -54,8 +55,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 title = getString(R.string.app_name)
             }
             R.id.nav_favorite -> {
-                fragment = FavoriteFragment()
-                title = getString(R.string.menu_favorite)
+                val uri = Uri.parse("rickexpert://favorites")
+                startActivity(Intent(Intent.ACTION_VIEW, uri))
             }
             R.id.nav_map -> {
                 Toast.makeText(this, "Coming soon", Toast.LENGTH_SHORT).show()

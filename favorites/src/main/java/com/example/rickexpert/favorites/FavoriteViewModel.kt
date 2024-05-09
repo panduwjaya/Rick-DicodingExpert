@@ -1,4 +1,4 @@
-package com.example.rickexpert.favorite
+package com.example.rickexpert.favorites
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
