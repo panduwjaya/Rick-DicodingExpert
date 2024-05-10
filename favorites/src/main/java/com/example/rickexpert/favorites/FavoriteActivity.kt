@@ -16,6 +16,7 @@ class FavoriteActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityFavoriteBinding
     private val favoriteViewModel: FavoriteViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFavoriteBinding.inflate(layoutInflater)
@@ -30,11 +31,10 @@ class FavoriteActivity : AppCompatActivity() {
 
         favoriteViewModel.favoriteTourism.observe(this) { dataTourism ->
             tourismAdapter.setData(dataTourism)
-            binding.viewEmpty.root.visibility =
-                if (dataTourism.isNotEmpty()) View.GONE else View.VISIBLE
+            binding.viewEmpty.root.visibility = if (dataTourism.isNotEmpty()) View.GONE else View.VISIBLE
         }
 
-        with(binding.rvTourism) {
+        binding.rvTourism.apply {
             layoutManager = LinearLayoutManager(context)
             setHasFixedSize(true)
             adapter = tourismAdapter
